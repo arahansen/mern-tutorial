@@ -1,0 +1,18 @@
+{
+  "name": "mern-stack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+		"start:step-2": "NODE_PATH=. node step-2/app.js",
+		"start:step-3": "NODE_PATH=. node step-3/app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
