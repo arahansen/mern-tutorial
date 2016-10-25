@@ -14,7 +14,7 @@ This stack is appealing because it allows developers who might traditionally be 
 `step-0` and `step-1` can be run by simply opening their corresponding `index.html` files in a browser. `step-0` is a bare-minimum "Hello, World" for React using JSX but no  build step 🎉! `step-1` is a fully client-side implementation of the app we will be building.
 
 ### step-2 || step-3
-`step-2` and `step-3` can be run with `npm run start:step-{2 or 3}`
+`step-2` and `step-3` can be run with `npm run start:step-{2 or 3}`. `step-2` introduces the Node server and Express for serving content. `step-3` implements a REST-ful API using Express and stores/retrieves data from a MongoDB database.
 
 **NOTE:** You must have mongoDB installed and running to run these examples. (See below for installation and start up instructions)
 
