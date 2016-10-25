@@ -1,15 +1,23 @@
 # MERN Tutorial
+The MERN Stack is a set of libraries and frameworks that allow developers to develop full-stack applications using only JavaScript. The stack consists of:
+
+* [MongoDB](https://www.mongodb.com/)
+* [Express](http://expressjs.com/)
+* [React](https://facebook.github.io/react/)
+* [Node](https://nodejs.org/en/)
+
+This stack is appealing because it allows developers who might traditionally be "trapped" on the front-end to extend their JavaScript super powers across the entire pipeline of an application without the cognitive-overhead of context switching between programming languages.
 
 ## Jump In (Run Tutorial Examples)
 
-### step-0 & step-1
+### step-0 || step-1
 `step-0` and `step-1` can be run by simply opening their corresponding `index.html` files in a browser.
 
-`step-0` is a bare-minimum "Hello, World" for React using JSX but no  build step 🎉.
+`step-0` is a bare-minimum "Hello, World" for React using JSX but no  build step! 🎉
 
 `step-1` is a fully client-side implementation of the app we will be building.
 
-### step-2 & step-3
+### step-2 || step-3
 `step-2` and `step-3` can be run with `npm run start:step-{2 or 3}`
 
 **NOTE:** You must have mongoDB installed and running to run these examples. (See below for installation and start up instructions)
