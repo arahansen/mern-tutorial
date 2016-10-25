@@ -11,11 +11,7 @@ This stack is appealing because it allows developers who might traditionally be 
 ## Jump In (Run Tutorial Examples)
 
 ### step-0 || step-1
-`step-0` and `step-1` can be run by simply opening their corresponding `index.html` files in a browser.
-
-`step-0` is a bare-minimum "Hello, World" for React using JSX but no  build step! 🎉
-
-`step-1` is a fully client-side implementation of the app we will be building.
+`step-0` and `step-1` can be run by simply opening their corresponding `index.html` files in a browser. `step-0` is a bare-minimum "Hello, World" for React using JSX but no  build step 🎉! `step-1` is a fully client-side implementation of the app we will be building.
 
 ### step-2 || step-3
 `step-2` and `step-3` can be run with `npm run start:step-{2 or 3}`
