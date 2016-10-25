@@ -36,3 +36,8 @@ The following instructions walk through setting up MongoDB on MacOS. Instruction
 1. `npm init`
 
 1. `npm install express body-parser mongoose --save`
+
+# Beyond This Tutorial
+The purpose of this tutorial is to serve as a jumping-off point for full-stack Javascript development. To expand on the ideas and concepts implemented here, I recommend checking out [mern.io](http://mern.io/) for a fully-featured, production-ready implementation of the "MERN Stack" that includes server-side rendering, component generation CLI, a development pipeline using Webpack, and much more!
+
+If you have any questions feel free to reach out either here or find me on Twitter [@arahansen](https://twitter.com/arahansen). I'd be more than happy to chat!
