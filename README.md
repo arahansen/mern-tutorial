@@ -6,7 +6,7 @@ The MERN Stack is a set of libraries and frameworks that allow developers to dev
 * [React](https://facebook.github.io/react/)
 * [Node](https://nodejs.org/en/)
 
-This stack is appealing because it allows developers who might traditionally be "trapped" on the front-end to extend their JavaScript super powers across the entire pipeline of an application without the cognitive-overhead of context switching between programming languages.
+This stack is appealing because it allows developers who might traditionally be "trapped" on the front-end to extend their JavaScript super powers across the entire pipeline of an application without the cognitive-overhead of context switching between programming languages and oftentimes programming paradigms.
 
 ## Jump In (Run Tutorial Examples)
 
