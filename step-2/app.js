@@ -2,21 +2,21 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 // our data "store"
-const characters = [{
-	name: 'Arya Stark',
-	alias: 'No One',
+const monsters = [{
+	creature: 'Zombie',
+	classification: 'Undead',
 	id: 0,
 }, {
-	name: 'Tyrion Lannister',
-	alias: 'Hand of the Queen',
+	creature: 'Frankenstein\'s Monster',
+	classification: 'Creation of Man',
 	id: 1,
 }, {
-	name: 'Jon Snow',
-	alias: 'Warden of the North',
+	creature: 'Ghost 👻',
+	classification: 'Spirit',
 	id: 2,
 }, {
-	name: 'Daenerys Targaryen',
-	alias: 'Khaleesi',
+	creature: 'Giant Spider',
+	classification: 'Arachnid',
 	id: 3,
 }];
 
@@ -32,20 +32,20 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/characters', (req, res) => {
-	res.send(characters);
+app.get('/monsters', (req, res) => {
+	res.send(monsters);
 });
 
-app.post('/characters', (req, res) => {
-	const newCharacter = req.body;
+app.post('/monsters', (req, res) => {
+	const newMonster = req.body;
 
-	// uniquely identify character
-	newCharacter.id = characters.length;
+	// uniquely identify monster
+	newMonster.id = monsters.length;
 
 	// add to data store
-	characters.push(newCharacter);
+	monsters.push(newMonster);
 
-	res.send(newCharacter);
+	res.send(newMonster);
 });
 
 /**

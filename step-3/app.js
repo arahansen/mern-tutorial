@@ -3,12 +3,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const characterSchema = new Schema({
-	name: { type: String, required: true },
-	alias: String
+const monsterSchema = new Schema({
+	creature: { type: String, required: true },
+	classification: String
 });
 
-const Character = mongoose.model('Character', characterSchema);
+const Monster = mongoose.model('Monster', monsterSchema);
 
 /**
  * Create Express server.
@@ -30,25 +30,25 @@ try {
 	mongoose.connect('mongodb://localhost/mern_tutorial');
 	console.log('connected to mongoDB');
 } catch (e) {
-	console.log('ERROR: could not connect to mongoDB. Is is running? (use `mongod`)');
+	console.log('ERROR: could not connect to mongoDB. Is it running? (use `mongod`)');
 	process.exit(1);
 }
 
-app.get('/characters', (req, res) => {
-	Character.find((err, characters) => {
+app.get('/monsters', (req, res) => {
+	Monster.find((err, monsters) => {
 		if (err) return res.status(500).send(err);
 
-		res.send(characters);
+		res.send(monsters);
 	});
 });
 
-app.post('/characters', (req, res) => {
-	const newCharacter = new Character(req.body);
+app.post('/monsters', (req, res) => {
+	const newMonster = new Monster(req.body);
 
-	newCharacter.save((err, character) => {
+	newMonster.save((err, monster) => {
 		if (err) return res.status(500).send(err);
 
-		res.send(character);
+		res.send(monster);
 	});
 });
 

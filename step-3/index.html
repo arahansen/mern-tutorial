@@ -2,121 +2,121 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>MERN Stack!</title>
-		<script src="https://unpkg.com/react@15.3.1/dist/react.min.js"></script>
-		<script src="https://unpkg.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
+    <title>MERN Stack (So Spooky!)</title>
+    <script src="https://unpkg.com/react@15.3.1/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.1/dist/react-dom.min.js"></script>
     <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<style>
-			h1, h2, h3, h4, h5, h6, p {
-				margin: 0;
-			}
-		</style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+      h1, h2, h3, h4, h5, h6, p {
+        margin: 0;
+      }
+    </style>
 
   </head>
   <body>
     <div id="example"></div>
     <script type="text/babel">
-			// React components can be simple, pure functions
-			function Character(props) {
-				return (
-					<li className="list-group-item">
-						<h4>{props.name}</h4>
-						<p>{props.alias}</p>
-					</li>
-				);
-			}
+      // React components can be simple, pure functions
+      function Monster(props) {
+        return (
+          <li className="list-group-item">
+            <h4>{props.creature}</h4>
+            <p>{props.classification}</p>
+          </li>
+        );
+      }
 
-			function CharacterList(props) {
-				return (
-					<ul className="list-group">
-						{props.characters.map(Character)}
-					</ul>
-				);
-			}
+      function MonsterList(props) {
+        return (
+          <ul className="list-group">
+            {props.monsters.map(Monster)}
+          </ul>
+        );
+      }
 
-			function CreateCharacter(props) {
-				/*
-				 * - Grabs text values from `name` and `alias` inputs;
-				 * - send values to parent component (<App />)
-				 * - reset inputs
-				 */
-				const submit = () => {
-					const nameInput = document.querySelector('#name');
-					const aliasInput = document.querySelector('#alias');
+      function CreateMonster(props) { // become Frankenstein
+        /*
+         * - Grabs text values from `creature` and `classification` inputs;
+         * - send values to parent component (<App />)
+         * - reset inputs
+         */
+        const submit = () => {
+          const creatureInput = document.querySelector('#creature');
+          const classificationInput = document.querySelector('#classification');
 
-					props.onAddCharacter({
-						name: nameInput.value,
-						alias: aliasInput.value
-					});
+          props.onAddMonster({
+            creature: creatureInput.value,
+            classification: classificationInput.value
+          });
 
-					nameInput.value = "";
-					aliasInput.value = "";
-				}
+          creatureInput.value = "";
+          classificationInput.value = "";
+        }
 
-				return (
-					<div style={{display:'flex'}}>
-						<input id="name" className="form-control"
-							placeholder="Name" />
+        return (
+          <div style={{display:'flex'}}>
+            <input id="creature" className="form-control"
+              placeholder="Monster" />
 
-						<input id="alias" className="form-control"
-							placeholder="Alias" />
+            <input id="classification" className="form-control"
+              placeholder="Classification" />
 
-						<button className="btn btn-primary" type="button" onClick={submit}>
-							Add Character
-						</button>
-					</div>
-				);
-			}
+            <button className="btn btn-primary" type="button" onClick={submit}>
+              Add Monster
+            </button>
+          </div>
+        );
+      }
 
-			class App extends React.Component {
-				constructor() {
-					super();
+      class App extends React.Component {
+        constructor() {
+          super();
 
-					this.state = {
-						characters: []
-					};
-				}
+          this.state = {
+            monsters: []
+          };
+        }
 
-				componentWillMount() {
-					fetch('/characters')
-						.then(res => res.json())
-						.then(data => {
-							this.setState({	characters: data });
-						})
-				}
+        componentWillMount() {
+          fetch('/monsters')
+            .then(res => res.json())
+            .then(data => {
+              this.setState({  monsters: data });
+            })
+        }
 
-				/*
-				 * Add newCharacter to store (`this.state`) and re-render
-				 */
-				handleAddCharacter(newCharacter) {
-					fetch('/characters', {
-						method: 'POST',
-						headers: {
-							"Content-Type": "application/json"
-						},
-						body: JSON.stringify(newCharacter)
-					})
-					.then(res => res.json())
-					.then(character => {
-						this.setState({
-							characters: this.state.characters.concat(character)
-						});
-					});
-				}
+        /*
+         * Add newMonster to store (`this.state`) and re-render
+         */
+        handleAddMonster(newMonster) {
+          fetch('/monsters', {
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newMonster)
+          })
+          .then(res => res.json())
+          .then(monster => {
+            this.setState({
+              monsters: this.state.monsters.concat(monster)
+            });
+          });
+        }
 
-				render() {
-					return (
-						<div>
-							<CharacterList characters={this.state.characters} />
-							<CreateCharacter onAddCharacter={this.handleAddCharacter.bind(this)}/>
-						</div>
-					);
-				}
-			}
+        render() {
+          return (
+            <div>
+              <MonsterList monsters={this.state.monsters} />
+              <CreateMonster onAddMonster={this.handleAddMonster.bind(this)}/>
+            </div>
+          );
+        }
+      }
 
       ReactDOM.render(
-				<App />,
+        <App />,
         document.getElementById('example')
       );
     </script>
