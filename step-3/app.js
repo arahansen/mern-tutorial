@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const path = require('path');
 const Schema = mongoose.Schema;
 
 const monsterSchema = new Schema({
@@ -33,6 +34,8 @@ try {
 	console.log('ERROR: could not connect to mongoDB. Is it running? (use `mongod`)');
 	process.exit(1);
 }
+
+app.use('/assets', express.static(path.resolve('step-3/assets'), { maxAge: '30 days' }));
 
 app.get('/monsters', (req, res) => {
 	Monster.find((err, monsters) => {
